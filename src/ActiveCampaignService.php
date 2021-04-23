@@ -77,6 +77,17 @@ class ActiveCampaignService
     }
 
     /**
+     * @param array $data
+     *
+     * @return bool
+     */
+    public function contactEdit(array $data)
+    {
+        $result = $this->ac->api("contact/edit", $data);
+        return (bool)$result->success;
+    }
+
+    /**
      * @param \stdClass $contact
      * @param array     $new_lists_ids
      *
